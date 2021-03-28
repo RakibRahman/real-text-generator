@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+header {
+  background-color: #edf9f6;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+header nav img {
+  width: 300px;
+  height: 100px;
+  object-fit: cover;
+}
+
+header nav a {
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */
