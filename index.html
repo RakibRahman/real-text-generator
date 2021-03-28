@@ -24,18 +24,37 @@
       </nav>
     </header>
 
-    <main>
+    <div class="container">
       <div class="inputArea">
-        <label for="wordsLength">
-          <input type="number" name="wordsLength" id="wordsLength" value="10" />
-        </label>
-        <label for="parasLength">
-          <input type="number" name="wordsLength" id="parasLength" value="3" />
-        </label>
+        <div>
+          <label for="wordsLength">
+            <span> How many words?</span>
+            <input
+              type="number"
+              name="wordsLength"
+              id="wordsLength"
+              value="10"
+            />
+          </label>
+        </div>
+
+        <div>
+          <label for="parasLength">
+            <span>How many paragraphs?</span>
+            <input
+              type="number"
+              name="parasLength"
+              id="parasLength"
+              value="3"
+            />
+          </label>
+        </div>
       </div>
-      <button>Generate</button>
-      <div class="output"></div>
-    </main>
+    </div>
+    <button id="generateBTN">Generate</button>
+
+    <div id="output">aa</div>
+
     <script src="text.js"></script>
     <script src="app.js"></script>
   </body>

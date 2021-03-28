@@ -21,3 +21,46 @@ header {
     }
   }
 }
+.container {
+  background-color: lighten($color: salmon, $amount: 5%);
+  margin-top: 50px;
+  display: grid;
+  place-content: center;
+  font-size: 25px;
+}
+.inputArea {
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #edf9f6;
+  padding: 10px;
+  width: 600px;
+
+  & input {
+    cursor: pointer;
+    font-size: 15px;
+    padding: 3px;
+    width: 150px;
+    margin-left: 50px;
+  }
+  & #parasLength {
+    margin-right: 50px;
+  }
+}
+button {
+  display: block;
+  margin: 10px auto;
+  font-size: 20px;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+#output {
+  margin: 10px auto 0;
+  width: 800px;
+  background-color: #edf9f6;
+  color: darken(#e7e7e7, 40);
+  font-size: 20px;
+  padding: 10px 20px;
+}
