@@ -5,6 +5,10 @@
   list-style: none;
 }
 
+body {
+  background-color: #fb968b;
+}
+
 header {
   background-color: #edf9f6;
 }
@@ -16,6 +20,7 @@ header nav {
 }
 
 header nav img {
+  cursor: pointer;
   width: 300px;
   height: 100px;
   object-fit: cover;
@@ -26,22 +31,37 @@ header nav a {
 }
 
 .container {
-  background-color: #fb968b;
   margin-top: 50px;
   display: grid;
   place-content: center;
-  font-size: 25px;
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100vw;
+  }
 }
 
 .inputArea {
-  text-align: justify;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: #edf9f6;
+  font-weight: 400;
+  text-transform: capitalize;
   padding: 10px;
   width: 600px;
+}
+
+@media (max-width: 600px) {
+  .inputArea {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .inputArea input {
@@ -52,24 +72,96 @@ header nav a {
   margin-left: 50px;
 }
 
-.inputArea #parasLength {
-  margin-right: 50px;
+@media (max-width: 600px) {
+  .inputArea input {
+    margin: 0;
+  }
 }
 
-button {
+.inputArea #parasLength {
+  margin-right: 60px;
+}
+
+@media (max-width: 600px) {
+  .inputArea #parasLength {
+    margin: 0;
+  }
+}
+
+#generateBTN {
+  border-radius: 10px;
+  border: 0;
   display: block;
-  margin: 10px auto;
-  font-size: 20px;
+  margin: 20px auto;
+  font-size: 1.3rem;
   padding: 3px 5px;
   cursor: pointer;
+  background: #11d0c7;
+  color: white;
+  font-style: bold;
 }
 
-#output {
+#wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+#wrapper #output {
+  border-radius: 10px;
   margin: 10px auto 0;
-  width: 800px;
+  min-height: 300px;
   background-color: #edf9f6;
   color: #818181;
   font-size: 20px;
-  padding: 10px 20px;
+  padding: 30px 20px 10px;
+  opacity: 0;
+}
+
+#wrapper #copyReset {
+  display: none;
+  justify-content: flex-end;
+}
+
+#wrapper #copyReset button {
+  background-color: #fb968b;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+#wrapper #copyReset button img {
+  width: 20px;
+  object-fit: cover;
+}
+
+#wrapper #copyReset button > * {
+  vertical-align: middle;
+}
+
+footer {
+  width: 100%;
+  max-width: 800px;
+  margin: 75px auto 20px;
+  font-size: 25px;
+  text-align: center;
+  font-weight: 500;
+}
+
+footer img {
+  width: 25px;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer .copyright > * {
+  vertical-align: middle;
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=style.css.map */
