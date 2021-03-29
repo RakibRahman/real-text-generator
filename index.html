@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Real Text Generator</title>
+
     <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
       <nav>
-        <img src="img/default.png" alt="" />
+        <img src="img/default.png" alt="logo" />
         <ul>
           <li>
             <a
@@ -33,7 +35,7 @@
               type="number"
               name="wordsLength"
               id="wordsLength"
-              value="10"
+              value="50"
             />
           </label>
         </div>
@@ -53,9 +55,33 @@
     </div>
     <button id="generateBTN">Generate</button>
 
-    <div id="output">aa</div>
-
+    <div id="wrapper">
+      <div id="copyReset">
+        <button id="copyBTN">
+          <img src="img/clipboard-text.svg" alt="copy" /> Copy
+        </button>
+        <button id="resetBTN">
+          <img src="img/arrows-clockwise.svg" alt="reset" /> Reset
+        </button>
+      </div>
+      <div id="output"></div>
+    </div>
+    <footer>
+      <p class="copyright">
+        <img src="img/copyright.svg" alt="copyright" />2021 Real Text Generator.
+      </p>
+      <p>
+        Coded by
+        <a
+          href="https://www.linkedin.com/in/rakib-talukder-04666519a/"
+          target="_blank"
+          >Rakib Rahman</a
+        >
+        with 💗
+      </p>
+    </footer>
     <script src="text.js"></script>
     <script src="app.js"></script>
+    <script src="clipboard.js"></script>
   </body>
 </html>
