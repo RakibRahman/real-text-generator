@@ -3,6 +3,7 @@ const wordNumbers = document.getElementById("wordsLength");
 const paraNumbers = document.getElementById("parasLength");
 const btn = document.getElementById("generateBTN");
 const output = document.getElementById("output");
+const copyReset = document.getElementById("copyReset");
 
 //!get texts
 const regex = /([^A-Za-z\s])/g;
@@ -18,10 +19,13 @@ btn.addEventListener("click", () => {
   for (let i = 0; i < paraLength; i++) {
     generateParas(wordsLength);
   }
+  output.style.opacity = "1";
+  copyReset.style.display = "flex";
 });
 
 const generateParas = (num) => {
   const p = document.createElement("p");
+  p.classList.add("test");
 
   p.textContent = generateSentence("", num);
   p.style.margin = "10px 0px";
