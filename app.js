@@ -11,7 +11,7 @@ const array = text.split(" ");
 //console.log(array);
 
 btn.addEventListener("click", () => {
-  const getInfo = array.sort((a, b) => 0.5 - Math.random());
+  array.sort((a, b) => 0.5 - Math.random());
   const paraLength = Number(paraNumbers.value);
   const wordsLength = Number(wordNumbers.value);
 
@@ -22,15 +22,37 @@ btn.addEventListener("click", () => {
 
 const generateParas = (num) => {
   const p = document.createElement("p");
-  let temp = "";
-  let randomWords = Math.floor(Math.random() * 10) + 2;
 
-  for (let i = 0; i < randomWords; i++) {
-    let words = array[Math.floor(Math.random() * array.length)];
-    temp += ` ${words}`;
-  }
-  temp = temp.trim().toLowerCase();
-  p.textContent = temp;
+  p.textContent = generateSentence("", num);
   p.style.margin = "10px 0px";
   output.append(p);
+};
+
+const generateSentence = (temp, num) => {
+  let totalWords = num > 10 ? 10 : num;
+  let randomWords = Math.floor(Math.random() * totalWords) + 2;
+  let holder = "";
+  for (let i = 0; i < randomWords; i++) {
+    if (num > 0) {
+      let words = array[Math.floor(Math.random() * array.length)];
+      holder += ` ${words}`;
+    }
+    num--;
+  }
+  if (holder.length > 0) {
+    temp += capWords(holder.trim().toLowerCase());
+  }
+
+  if (num < 0) {
+    return temp;
+  } else {
+    return generateSentence(temp, num);
+  }
+};
+
+const capWords = (str) => {
+  let firstLetter = str.charAt(0).toUpperCase();
+  let sentence = firstLetter + str.slice(1) + ". ";
+  return sentence;
+  // console.log(sentence, str);
 };
